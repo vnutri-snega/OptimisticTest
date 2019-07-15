@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="1" author="snezha">
+        <createTable tableName="example">
+            <column name="ID" type="INT(10)" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="TEXT" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NUMBER" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_modified" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="snezha">
+        <insert tableName="example">
+            <column name="ID">1</column>
+            <column name="TEXT">test</column>
+            <column name="NUMBER">0</column>
+            <column name="is_modified">0</column>
+            <column name="version">0</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
